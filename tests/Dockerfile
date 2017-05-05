@@ -9,6 +9,11 @@ CMD ["/sbin/my_init"]
 
 #Install wget
 RUN apt-get update
+
+#Upgrade OS
+RUN apt-get upgrade -y -o Dpkg::Options::="--force-confold"
+
+#Install netcat
 RUN apt-get -y install wget tree sudo curl netcat
 
 #Enable ssh
